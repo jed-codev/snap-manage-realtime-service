@@ -1,5 +1,5 @@
 {
-  "name": "snap-manage-websocket-service",
+  "name": "snap-manage-realtime-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
