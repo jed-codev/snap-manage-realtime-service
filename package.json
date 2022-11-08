@@ -12,6 +12,7 @@
   "author": "jed",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "kafkajs": "^2.2.2",
     "socket.io": "^4.5.3"

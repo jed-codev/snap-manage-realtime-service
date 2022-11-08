@@ -1,5 +1,6 @@
 import { Server as SocketIo } from "socket.io";
 import { IncomingMessage, Server, ServerResponse } from "http";
+import auth from "../middlewares/auth";
 
 export default (server: Server<typeof IncomingMessage, typeof ServerResponse>) => {
   const io = new SocketIo(server, { 
@@ -11,6 +12,8 @@ export default (server: Server<typeof IncomingMessage, typeof ServerResponse>) =
       methods: ["GET", "POST"],
     } 
   });
+  
+  io.use(auth);
 
   let webSocketClients: Array<string> = [];
 

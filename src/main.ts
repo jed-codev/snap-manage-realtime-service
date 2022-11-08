@@ -1,3 +1,8 @@
+/**
+ * ** NOTE ** add .env on gitignore
+ */
+// load .env file immediately
+require("dotenv").config({ path: `${__dirname}/../.env` })
 import express, { Application, Request, Response, NextFunction } from "express";
 import kafkaConsumer from "./utils/kakfa-consumer";
 import type { Server as SocketIo } from "socket.io";
@@ -11,7 +16,7 @@ class Main {
 
   constructor() {
     this.app = express();
-    this.port = process.env.PORT  || 4000
+    this.port = process.env.REALTIME_SERVICE_PORT  || 4000
     const server = this.listen();
     this.io = socketIo(server);
 
